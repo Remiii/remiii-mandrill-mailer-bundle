@@ -81,4 +81,7 @@ This bundle is under the MIT license. See the complete license in LICENSE.md
 
 * Rémi Barbe (aka Remiii)
 
+## Bug report and Help
+
+For bug reports open a Github ticket. Patches gratefully accepted. :-)
 
