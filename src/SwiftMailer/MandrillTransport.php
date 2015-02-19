@@ -116,10 +116,10 @@ class MandrillTransport implements Swift_Transport
         $toHeader = $message -> getHeaders ( ) -> get ( 'To' ) ;
         if ( !$toHeader )
         {
-            $this -> _throwException ( new Swift_TransportException ( 'Cannot send message without a recipient' ) ) ;
+            $this -> throwException ( new Swift_TransportException ( 'Cannot send message without a recipient' ) ) ;
         }
 
-        $mandrillMessageData = $this -> _getMandrillMessageData ( $message ) ;
+        $mandrillMessageData = $this -> getMandrillMessageData ( $message ) ;
 
         try {
             $result = $this -> _mandrill -> messages -> send ( $mandrillMessageData , $this -> _async ) ;
@@ -175,7 +175,7 @@ class MandrillTransport implements Swift_Transport
      *
      * @return array Mandrill Send Message
      */
-    protected function _getMandrillMessageData ( Swift_Mime_Message $message )
+    protected function getMandrillMessageData ( Swift_Mime_Message $message )
     {
         $fromAddresses = $message -> getFrom ( ) ;
         $formEmails = array_keys ( $fromAddresses ) ;
@@ -272,7 +272,7 @@ class MandrillTransport implements Swift_Transport
     }
 
     /** Throw a TransportException, first sending it to any listeners */
-    protected function _throwException ( Swift_TransportException $e )
+    protected function throwException ( Swift_TransportException $e )
     {
         if ($evt = $this -> _eventDispatcher -> createTransportExceptionEvent ( $this , $e ) )
         {
