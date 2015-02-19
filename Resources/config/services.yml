@@ -1,0 +1,8 @@
+services:
+    swiftmailer.transport.eventdispatcher.mandrill_mailer:
+        class: Swift_Events_SimpleEventDispatcher
+
+    swiftmailer.mailer.transport.mandrill:
+        class: remiii\MandrillMailerBundle\src\SwiftMailer\MandrillTransport
+        arguments:
+            - @swiftmailer.transport.eventdispatcher.mandrill_mailer

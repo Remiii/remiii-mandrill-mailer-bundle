@@ -1,0 +1,25 @@
+{
+    "name": "remiii/mandrill-mailer-bundle",
+    "description": "MandrillMailerBundle add support for Mandrill API on Swiftmailer",
+    "keywords": ["mandill", "swiftmailer", "mail", "mailer", "symfony", "bundle", "api"],
+    "homepage": "https://github.com/remiii/remiii-mandrill-mailer-bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rémi Barbe",
+            "email": "free-software@remibarbe.fr"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": ">=2.3",
+        "mandrill/mandrill": "~1.0",
+        "swiftmailer/swiftmailer": "~5.3"
+    },
+    "autoload": {
+        "psr-0": { "remiii\\MandrillMailerBundle": "" }
+    },
+    "target-dir": "remiii/remiii-mandrill-mailer-bundle"
+}
+
