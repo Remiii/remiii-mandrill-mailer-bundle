@@ -61,7 +61,7 @@ remiii_mandrill_mailer:
 
 parameters:
     #...
-    mailer_transport; remiii_mandrill_mailer
+    mailer_transport: remiii_mandrill_mailer
 ```
 
 ## License
