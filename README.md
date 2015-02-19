@@ -57,7 +57,7 @@ remiii_mandrill_mailer:
 ### Step 4: Config `param.yml`
 
 ```yml
-// app/parameters.yml
+// app/config/parameters.yml
 
 parameters:
     #...
