@@ -232,21 +232,21 @@ class MandrillTransport implements Swift_Transport
 
         $mandrillMessageData = array (
             'html'       => $message -> getBody ( ) ,
-            // TODO txt
+            // txt
             'subject'    => $message -> getSubject ( ) ,
             'from_email' => $formEmails [ 0 ] ,
             'from_name'  => $fromAddresses [ $formEmails [ 0 ] ] ,
             'to'         => $to ,
             'headers'    => $mandrillHeaders
-            // TODO important
-            // TODO inline_css
-            // TODO tags
+            // important
+            // inline_css
+            // tags
         ) ;
 
         if ( count ( $attachments ) > 0 )
         {
             $mandrillMessageData [ 'attachments' ] = $attachments ;
-            // TODO images
+            // images
         }
 
         return $mandrillMessageData ;
