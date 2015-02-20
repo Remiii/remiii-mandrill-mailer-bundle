@@ -17,6 +17,9 @@
         "mandrill/mandrill": "~1.0",
         "swiftmailer/swiftmailer": "~5.3"
     },
+    "require-dev": {
+        "mockery/mockery": "0.9.*@dev"
+    },
     "autoload": {
         "psr-0": { "remiii\\MandrillMailerBundle": "" }
     },
