@@ -16,6 +16,8 @@ Features include:
 
 Caution: This bundle is under development with no warranty.
 
+[![Total Downloads](https://poser.pugx.org/remiii/mandrill-mailer-bundle/downloads.svg)](https://packagist.org/packages/remiii/mandrill-mailer-bundle)
+
 [![Build Status](https://travis-ci.org/Remiii/remiii-mandrill-mailer-bundle.svg?branch=master)](https://travis-ci.org/Remiii/remiii-mandrill-mailer-bundle)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dcf88206-86e6-4c52-b99e-dd184ab69b3c/big.png)](https://insight.sensiolabs.com/projects/dcf88206-86e6-4c52-b99e-dd184ab69b3c)
@@ -77,9 +79,15 @@ parameters:
     mailer_transport: remiii_mandrill_mailer
 ```
 
+## Version
+
+[![Latest Stable Version](https://poser.pugx.org/remiii/mandrill-mailer-bundle/v/stable.svg)](https://packagist.org/packages/remiii/mandrill-mailer-bundle)
+
 ## License
 
 This bundle is under the MIT license. See the complete license in LICENSE.md
+
+[![License](https://poser.pugx.org/remiii/mandrill-mailer-bundle/license.svg)](https://packagist.org/packages/remiii/mandrill-mailer-bundle)
 
 ## Authors
 
