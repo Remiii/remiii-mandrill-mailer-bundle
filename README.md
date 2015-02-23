@@ -20,6 +20,8 @@ Caution: This bundle is under development with no warranty.
 
 [![Build Status](https://travis-ci.org/Remiii/remiii-mandrill-mailer-bundle.svg?branch=master)](https://travis-ci.org/Remiii/remiii-mandrill-mailer-bundle)
 
+[![Coverage Status](https://coveralls.io/repos/Remiii/remiii-mandrill-mailer-bundle/badge.svg)](https://coveralls.io/r/Remiii/remiii-mandrill-mailer-bundle)
+
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/dcf88206-86e6-4c52-b99e-dd184ab69b3c/big.png)](https://insight.sensiolabs.com/projects/dcf88206-86e6-4c52-b99e-dd184ab69b3c)
 
 ## Requirement
