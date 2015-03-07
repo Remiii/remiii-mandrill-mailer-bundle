@@ -184,6 +184,7 @@ class MandrillTransport implements Swift_Transport
         $bccAddresses = ( $message -> getBcc ( ) ) ? $message -> getBcc ( ) : array ( ) ;
         $replyToAddresses = ( $message -> getReplyTo ( ) ) ? $message -> getReplyTo ( ) : array ( ) ;
         $to = array ( ) ;
+        $mandrillHeaders = array ( ) ;
         $attachments = array ( ) ;
 
         foreach ( $toAddresses as $toEmail => $toName )
