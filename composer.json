@@ -18,7 +18,8 @@
         "swiftmailer/swiftmailer": "~5.3"
     },
     "require-dev": {
-        "mockery/mockery": "0.9.*@dev"
+        "mockery/mockery": "0.9.*@dev",
+        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-0": { "remiii\\MandrillMailerBundle": "" }
