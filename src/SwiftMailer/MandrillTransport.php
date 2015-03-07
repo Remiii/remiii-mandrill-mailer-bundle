@@ -183,6 +183,9 @@ class MandrillTransport implements Swift_Transport
         $ccAddresses = ( $message -> getCc ( ) ) ? $message -> getCc ( ) : array ( ) ;
         $bccAddresses = ( $message -> getBcc ( ) ) ? $message -> getBcc ( ) : array ( ) ;
         $replyToAddresses = ( $message -> getReplyTo ( ) ) ? $message -> getReplyTo ( ) : array ( ) ;
+        $replyToAddresses = ( $message -> getReplyTo ( ) ) ? $message -> getReplyTo ( ) : array ( ) ;
+        $headers = ( $message -> getHeaders ( ) ) ? $message -> getHeaders ( ) : array ( ) ;
+
         $to = array ( ) ;
         $mandrillHeaders = array ( ) ;
         $attachments = array ( ) ;
@@ -226,6 +229,15 @@ class MandrillTransport implements Swift_Transport
             }
         }
 
+        if ( $headers -> get ( 'X-MC-InlineCSS' ) != null )
+        {
+            $inlineCss = $headers -> get ( 'X-MC-InlineCSS' ) -> getValue ( ) ;
+        }
+        else
+        {
+            $inlineCss = null ;
+        }
+
         foreach ( $message -> getChildren ( ) as $child )
         {
             if ( $child instanceof Swift_Attachment )
@@ -245,9 +257,9 @@ class MandrillTransport implements Swift_Transport
             'from_email' => $formEmails [ 0 ] ,
             'from_name'  => $fromAddresses [ $formEmails [ 0 ] ] ,
             'to'         => $to ,
-            'headers'    => $mandrillHeaders
+            'headers'    => $mandrillHeaders ,
             // important
-            // inline_css
+            'inline_css' => $inlineCss
             // tags
         ) ;
 
