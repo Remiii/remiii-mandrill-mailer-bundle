@@ -182,6 +182,7 @@ class MandrillTransport implements Swift_Transport
         $toAddresses = $message -> getTo ( ) ;
         $ccAddresses = ( $message -> getCc ( ) ) ? $message -> getCc ( ) : array ( ) ;
         $bccAddresses = ( $message -> getBcc ( ) ) ? $message -> getBcc ( ) : array ( ) ;
+        $replyToAddresses = ( $message -> getReplyTo ( ) ) ? $message -> getReplyTo ( ) : array ( ) ;
         $to = array ( ) ;
         $attachments = array ( ) ;
 
@@ -212,6 +213,18 @@ class MandrillTransport implements Swift_Transport
             ) ;
         }
 
+        foreach ( $replyToAddresses as $replyToEmail => $replyToName )
+        {
+            if ( $replyToName )
+            {
+                $mandrillHeaders [ 'Reply-To' ] = sprintf ( '%s <%s>' , $replyToEmail , $replyToName ) ;
+            }
+            else
+            {
+                $mandrillHeaders [ 'Reply-To' ] = $replyToEmail ;
+            }
+        }
+
         foreach ( $message -> getChildren ( ) as $child )
         {
             if ( $child instanceof Swift_Attachment )
@@ -223,12 +236,6 @@ class MandrillTransport implements Swift_Transport
                 ) ;
             }
         }
-
-        $mandrillReplyTo = $message -> getReplyTo ( ) ;
-
-        $mandrillHeaders = array (
-            'Reply-To' => $mandrillReplyTo
-        ) ;
 
         $mandrillMessageData = array (
             'html'       => $message -> getBody ( ) ,
