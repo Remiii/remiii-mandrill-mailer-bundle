@@ -5,6 +5,7 @@ namespace remiii\MandrillMailerBundle\src\SwiftMailer ;
 use \Swift_Events_EventDispatcher ;
 use \Swift_Events_EventListener ;
 use \Swift_Events_SendEvent ;
+use \Swift_Mime_HeaderSet ;
 use \Swift_Mime_Message ;
 use \Swift_Transport ;
 use \Swift_Attachment ;
@@ -229,7 +230,7 @@ class MandrillTransport implements Swift_Transport
             }
         }
 
-        if ( $headers -> get ( 'X-MC-InlineCSS' ) != null )
+        if ( $headers -> get ( 'X-MC-InlineCSS' ) !== null )
         {
             $inlineCss = $headers -> get ( 'X-MC-InlineCSS' ) -> getValue ( ) ;
         }
