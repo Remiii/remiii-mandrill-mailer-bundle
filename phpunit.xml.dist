@@ -11,6 +11,7 @@
          syntaxCheck="false"
          bootstrap="Tests/bootstrap.php"
         >
+
     <testsuites>
         <testsuite name="MandrillMailerBundle Test Suite">
             <directory>./Tests</directory>
@@ -29,5 +30,10 @@
             </exclude>
         </whitelist>
     </filter>
+
+    <logging>
+        <log type="coverage-html" target="./docs/coverage" chartset="UTF-8" />
+        <log type="coverage-clover" target="./docs/coverage/clover.xml"/>
+    </logging>
 
 </phpunit>
