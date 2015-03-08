@@ -239,6 +239,15 @@ class MandrillTransport implements Swift_Transport
             $inlineCss = null ;
         }
 
+        if ( $headers -> get ( 'X-MC-Tags' ) !== null )
+        {
+            $tags = explode ( ',' , $headers -> get ( 'X-MC-Tags' ) -> getValue ( ) ) ;
+        }
+        else
+        {
+            $tags = null ;
+        }
+
         foreach ( $message -> getChildren ( ) as $child )
         {
             if ( $child instanceof Swift_Attachment )
@@ -252,16 +261,15 @@ class MandrillTransport implements Swift_Transport
         }
 
         $mandrillMessageData = array (
-            'html'       => $message -> getBody ( ) ,
+            'html'              => $message -> getBody ( ) ,
             // txt
-            'subject'    => $message -> getSubject ( ) ,
-            'from_email' => $formEmails [ 0 ] ,
-            'from_name'  => $fromAddresses [ $formEmails [ 0 ] ] ,
-            'to'         => $to ,
-            'headers'    => $mandrillHeaders ,
-            // important
-            'inline_css' => $inlineCss
-            // tags
+            'subject'           => $message -> getSubject ( ) ,
+            'from_email'        => $formEmails [ 0 ] ,
+            'from_name'         => $fromAddresses [ $formEmails [ 0 ] ] ,
+            'to'                => $to ,
+            'headers'           => $mandrillHeaders ,
+            'inline_css'        => $inlineCss ,
+            'tags'              => $tags
         ) ;
 
         if ( count ( $attachments ) > 0 )
