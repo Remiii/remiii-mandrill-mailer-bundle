@@ -35,7 +35,7 @@ Mandrill API Key - https://mandrillapp.com/
 Add MandrillMailerBundle by running the command:
 
 ```sh
-$ php composer.phar require remiii/mandrill-mailer-bundle "remiii/google-translate": "dev-master"
+$ php composer.phar require remiii/mandrill-mailer-bundle
 ```
 
 Composer will install the bundle to your project's `vendor` directory.
