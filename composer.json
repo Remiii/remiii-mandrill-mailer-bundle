@@ -23,6 +23,7 @@
     },
     "autoload": {
         "psr-0": { "remiii\\MandrillMailerBundle": "" }
-    }
+    },
+    "target-dir": "remiii/MandrillMailerBundle"
 }
 
