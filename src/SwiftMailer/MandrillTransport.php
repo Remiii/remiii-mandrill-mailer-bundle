@@ -183,7 +183,6 @@ class MandrillTransport implements Swift_Transport
         $ccAddresses = ( $message -> getCc ( ) ) ? $message -> getCc ( ) : array ( ) ;
         $bccAddresses = ( $message -> getBcc ( ) ) ? $message -> getBcc ( ) : array ( ) ;
         $replyToAddresses = ( $message -> getReplyTo ( ) ) ? $message -> getReplyTo ( ) : array ( ) ;
-        $replyToAddresses = ( $message -> getReplyTo ( ) ) ? $message -> getReplyTo ( ) : array ( ) ;
         $headers = ( $message -> getHeaders ( ) ) ? $message -> getHeaders ( ) : array ( ) ;
 
         $to = array ( ) ;
