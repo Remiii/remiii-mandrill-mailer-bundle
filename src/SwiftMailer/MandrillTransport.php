@@ -26,7 +26,7 @@ class MandrillTransport implements Swift_Transport
     private $_mandrill ;
 
     /**
-     * @Type boolean
+     * @type boolean
      */
     private $_async ;
 
