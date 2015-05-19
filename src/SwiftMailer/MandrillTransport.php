@@ -116,7 +116,7 @@ class MandrillTransport implements Swift_Transport
         $toHeader = $message -> getHeaders ( ) -> get ( 'To' ) ;
         if ( !$toHeader )
         {
-            $this -> throwException ( new Swift_TransportException ( 'Cannot send message without a recipient' ) ) ;
+            $this -> throwException ( new \Swift_TransportException ( 'Cannot send message without a recipient' ) ) ;
         }
 
         $mandrillMessageData = $this -> getMandrillMessageData ( $message ) ;
@@ -299,7 +299,7 @@ class MandrillTransport implements Swift_Transport
     }
 
     /** Throw a TransportException, first sending it to any listeners */
-    protected function throwException ( Swift_TransportException $e )
+    protected function throwException ( \Swift_TransportException $e )
     {
         if ($evt = $this -> _eventDispatcher -> createTransportExceptionEvent ( $this , $e ) )
         {
